@@ -1,11 +1,11 @@
 # Bib-UKFs
 
 ### Developers
-Author: Victor Araujo Vieira.
-Advisor: Henrique Menegaz
-e-mail: victor.4.vieira@gmail.com
-University of Brasilia - Brazil.
-Version: 1.0
+- Author: Victor Araujo Vieira.
+- Advisor: Henrique Menegaz
+- E-mail: victor.4.vieira@gmail.com
+- University of Brasilia - Brazil.
+- Version: 1.0
 
 ### Description
 The library implements a discrete-time Additive Unscented Kalman Filter, based on the paper 2015_Menegaz et al._A Systematization of the Unscented Kalman Filter Theory. The implementation followed the Unscented Transformation and Sigma Representation concepts. The four Sigma Representations done by far are: 
