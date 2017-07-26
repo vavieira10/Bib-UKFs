@@ -79,8 +79,10 @@ def pendulum():
 
 
 	#plotting the data generated 
-	plt.plot(T[0, :], y[0, :], 'r.', T[0, :], X[0, :], 'b-')
-	plt.title('Measurements and State')	
+	plt.plot(T[0, :], y[0, :], 'r.', label = 'Measurements')
+	plt.plot(T[0, :], X[0, :], 'b-', label = 'True angle')
+	plt.legend()
+	plt.title('Measurements and True angle')	
 	#plt.plot(x[0, :])
 	plt.show()
 
@@ -92,13 +94,16 @@ def pendulum():
 	#ukf computation
 	for k in range(0, steps):
 		state, p = ad_ukf(x_prev, pxx_prev, state_function, param_F, measurement_function, [], Q, R,
-					  y[0, [k]], 2, 0.2)
+					  y[0, [k]], 3, 0.1)
 		x_prev = state
 		pxx_prev = p
 		MM[:, [k]] = state
 
 
-	plt.plot(T[0, :], y[0, :], 'r.', T[0, :], X[0, :], 'b-', T[0, :], MM[0, :], 'g-')
+	plt.plot(T[0, :], y[0, :], 'r.', label = 'Measurements')
+	plt.plot(T[0, :], X[0, :], 'b-', label = 'True angle')
+	plt.plot(T[0, :], MM[0, :], 'g-', label = 'UKF')
+	plt.legend()
 	plt.title('After UKF')
 	#plt.text(1, -1.9,'Red - Measurements, Blue - Real State, Green - Estimated State')
 	plt.show()

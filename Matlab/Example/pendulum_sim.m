@@ -57,4 +57,5 @@
 
   % Plot the data
   plot(T,Y,'g.',T,X(1,:),'r-');
+  legend('Measurements', 'True Angle');
 
